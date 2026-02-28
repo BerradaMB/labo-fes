@@ -117,3 +117,33 @@ $('a[href*=#]').bind("click", function (e) {
 
 
 //  showSlidesCurrent(slideIndexCurrent);
+
+
+// Premium header: mobile toggle and scroll shadow
+$(function () {
+    var $header = $('.header.premium-header');
+
+    $('.menu-toggle').on('click', function (e) {
+        e.stopPropagation();
+        $header.toggleClass('open');
+        $header.find('.nav').stop(true, true).slideToggle(180);
+    });
+
+    $(window).on('scroll', function () {
+        if ($(window).scrollTop() > 20) {
+            $header.addClass('scrolled');
+        } else {
+            $header.removeClass('scrolled');
+        }
+    });
+
+    // close menu when clicking outside
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('.header.premium-header').length) {
+            if ($header.hasClass('open')) {
+                $header.removeClass('open');
+                $header.find('.nav').stop(true, true).slideUp(160);
+            }
+        }
+    });
+});
