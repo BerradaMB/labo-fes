@@ -367,7 +367,8 @@ a:focus-visible {
   background-color: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid var(--color-gray-light);
   
-  padding: var(--space-lg) var(--space-xl);
+  /* reduced padding for a slimmer header */
+  padding: var(--space-md) var(--space-lg);
   height: auto;
   transition: box-shadow var(--transition-base);
 }
@@ -382,7 +383,8 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-xl);
+  /* slightly tighter gap to match the slimmer header */
+  gap: var(--space-lg);
 }
 
 .logo {
@@ -399,8 +401,9 @@ a:focus-visible {
 }
 
 .logo-img {
-  width: 50px;
-  height: 50px;
+  /* slightly larger logo to make the button/image more prominent */
+  width: 64px;
+  height: 64px;
   border-radius: var(--border-radius-lg);
   object-fit: cover;
   box-shadow: var(--shadow-md);
@@ -621,7 +624,7 @@ a:focus-visible {
 .slideshow-container {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 140%;
 }
 
 .mySlides {
